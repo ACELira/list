@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>Lista della spesa </title>
+	<meta charset="utf-8"/>
+<!------------------------------------------------------------------------------------>
+
+
+
+<style type="text/css">
+* {background-color: #ccccff}
+
+	
+
+
+
+
+.articolo{
+	
+	color: darkred;
+	width: 25%;
+
+}
+
+.prezzo{
+	color:  #000033
+;
+	width: 25%;
+	
+}
+
+.quantita{
+	color: #404040;
+	width: 25%;
+}
+
+.totale{
+	color:  #000033
+;
+	width: 25%;
+}
+.flex{
+	text-align: center;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-size: 10px;
+
+}
+
+#abs {
+	text-align: center;
+
+}
+
+</style>
+</head>
+<body >
+
+		<h1 id="abs"> Lista della spesa </h1>
+
+		<div class="flex">
+		
+
+		<div id="articolo" class="articolo">
+			<h2 id="art1" onclick="cambiocolore()"  contenteditable> Articolo </h2> <!--se clicco diventa verde/rosso= toggle-->
+		</div>
+		
+		<div id="prezzo" class="prezzo">
+				<h2 contenteditable id="prz1">Prezzo</h2>
+		</div>
+		<div id="quantita" class="quantita">
+				<h2 contenteditable id="qnt1">Quantità</h2>
+		</div>
+		<div id="totale" class="totale">
+				<h2 id="tot1">Totale</h2>
+	</div>
+
+
+
+</body>
+
+
+
+
+<script type="text/javascript">
+
+var articolo1=document.getElementById("articolo1")
+let i=1;
+
+
+function cambiocolore() {
+
+
+
+if (art1.style.color=="green") {art1.style.color="darkred"} else {art1.style.color=" green"} } //art1 should be art[i].. but doesnt works
+
+	
+
+
+
+articolo.addEventListener("click",  ()=>  
+	{i++;
+		if(prz1.innerText>0 && qnt1>0){document.getElementById("tot1").innerHTML=prz1*qnt1} //doesnt work..
+		else if(prz1.innerText>0 ){document.getElementById("tot1").innerHTML=prz1.innerText} //It should be prz[i] instead of prz1
+
+
+	let nuovoart=document.createElement("h2"); nuovoart.innerHTML="<span contenteditable style='class: articolo'id=art"+i+"> Articolo</span>"; articolo.appendChild(nuovoart);
+	//i should insert "onclick="cambiocolore()" .. but doesnt works!
+ 	let nuovoprz=document.createElement("h2"); nuovoprz.innerHTML="<span contenteditable style='class: articolo'id=prz"+i+">Prezzo</span>"; prezzo.appendChild(nuovoprz);
+ 	let nuovaqnt=document.createElement("h2"); nuovaqnt.innerHTML="<span contenteditable style='class: articolo'id=qnt"+i+">Quantità</span>"; quantita.appendChild(nuovaqnt)
+ 	let nuovotot=document.createElement("h2"); nuovotot.innerHTML="<span  style='class: articolo'id=tot"+i+"> Totale</span>"; totale.appendChild(nuovotot)} )
+
+	
+
+
+
+
+
+
+</script>
+
+</html>
+
+
+
